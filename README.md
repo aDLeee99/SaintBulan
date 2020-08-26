@@ -1,4 +1,4 @@
-# hazedumper
+# KuasaBulanCSGO
 
 🚀 Up to date offset and dumper-config for Counter-Strike: Global Offensive. For more informations visit the [release page on UnKnoWnCheaTs](https://www.unknowncheats.me/forum/counterstrike-global-offensive/169351-haze-dumper-json-config-based-offset-dumper.html).
 
@@ -9,7 +9,7 @@ that nothing works, but they can't find a single signature themselves. However, 
 and also ClientState (`dwClientState`). All you need is a third offset which is located in ClientState, called `dwClientState_GetLocalPlayer`.
 
 ```C++
-const auto client_state = read_memory<std::uint32_t>( engine_image->base + hazedumper::signatures::dwClientState );
+const auto client_state = read_memory<std::uint32_t>( engine_image->base + kuasabulan::signatures::dwClientState );
 if( client_state ) {
     const auto local_player = get_client_entity( 
         read_memory<std::int32_t>( client_state + hazedumper::signatures::dwClientState_GetLocalPlayer )
@@ -19,7 +19,7 @@ if( client_state ) {
         printf(
             "[+] Found local player: 0x%X, health: %d\n",
             local_player,
-            read_memory<std::int32_t>( local_player + hazedumper::netvars::m_iHealth )
+            read_memory<std::int32_t>( local_player + kuasabulan::netvars::m_iHealth )
         );
     }
 }
@@ -27,7 +27,7 @@ if( client_state ) {
 
 ## Informations
 
-- ⚠️ Since we are both working and living in germany, we can't see 24/7 if there was an update and then push it. We make every effort to ensure that this happens as soon as possible.
+- ⚠️ Since we got life and makan tido also, we can't see 24/7 if there was an update and then push it, but do join my discord to receive update and we make every effort to ensure that this happens as soon as possible.
 - 🔫 The repository always refers to the latest version of the [steam store](http://store.steampowered.com/app/730/CounterStrike_Global_Offensive).
 - ⚠️ We are not liable for VAC bans in case of incorrect use.
 
